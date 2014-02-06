@@ -1,4 +1,4 @@
-package org.junitrunner.spring;
+package com.github.junitrunner.spring;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
@@ -11,13 +11,14 @@ import javax.annotation.Resource;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junitrunner.JUnitRunner;
-import org.junitrunner.WithPlugins;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.github.junitrunner.JUnitRunner;
+import com.github.junitrunner.WithPlugins;
 
 @RunWith(JUnitRunner.class)
 @WithPlugins(SpringPlugin.class)

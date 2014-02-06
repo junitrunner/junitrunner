@@ -1,10 +1,11 @@
-package org.junitrunner.unitils;
+package com.github.junitrunner.unitils;
 
 import org.junit.runners.model.Statement;
-import org.junitrunner.JUnitBasePlugin;
-import org.junitrunner.JUnitRunner;
-import org.junitrunner.JUnitTest;
-import org.junitrunner.javamethod.JUnitJavaMethodTest;
+
+import com.github.junitrunner.JUnitBasePlugin;
+import com.github.junitrunner.JUnitRunner;
+import com.github.junitrunner.JUnitTest;
+import com.github.junitrunner.javamethod.JUnitJavaMethodTest;
 
 public class UnitilsPlugin extends JUnitBasePlugin {
 

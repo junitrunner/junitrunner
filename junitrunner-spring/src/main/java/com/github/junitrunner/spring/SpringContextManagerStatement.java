@@ -1,8 +1,9 @@
-package org.junitrunner.spring;
+package com.github.junitrunner.spring;
 
 import org.junit.runners.model.Statement;
-import org.junitrunner.javamethod.AroundStatement;
 import org.springframework.test.context.TestContextManager;
+
+import com.github.junitrunner.javamethod.AroundStatement;
 
 public class SpringContextManagerStatement extends AroundStatement {
 

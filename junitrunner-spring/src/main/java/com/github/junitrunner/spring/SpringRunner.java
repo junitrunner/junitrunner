@@ -1,10 +1,11 @@
-package org.junitrunner.spring;
+package com.github.junitrunner.spring;
 
 import java.util.List;
 
 import org.junit.runners.model.InitializationError;
-import org.junitrunner.JUnitPlugin;
-import org.junitrunner.JUnitRunner;
+
+import com.github.junitrunner.JUnitPlugin;
+import com.github.junitrunner.JUnitRunner;
 
 public class SpringRunner extends JUnitRunner {
 

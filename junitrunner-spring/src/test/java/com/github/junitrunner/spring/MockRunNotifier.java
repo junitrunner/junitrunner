@@ -1,4 +1,4 @@
-package org.junitrunner.spring;
+package com.github.junitrunner.spring;
 
 import java.util.ArrayList;
 import java.util.List;

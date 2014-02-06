@@ -1,4 +1,4 @@
-package org.junitrunner.spring;
+package com.github.junitrunner.spring;
 
 import java.lang.reflect.Method;
 import java.util.List;
@@ -10,11 +10,6 @@ import org.junit.internal.runners.statements.ExpectException;
 import org.junit.internal.runners.statements.FailOnTimeout;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
-import org.junitrunner.JUnitBasePlugin;
-import org.junitrunner.JUnitRunner;
-import org.junitrunner.JUnitSuite;
-import org.junitrunner.JUnitTest;
-import org.junitrunner.javamethod.JUnitJavaMethodTest;
 import org.springframework.test.annotation.ProfileValueUtils;
 import org.springframework.test.annotation.Repeat;
 import org.springframework.test.annotation.Timed;
@@ -23,6 +18,12 @@ import org.springframework.test.context.junit4.statements.RunAfterTestMethodCall
 import org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks;
 import org.springframework.test.context.junit4.statements.SpringFailOnTimeout;
 import org.springframework.test.context.junit4.statements.SpringRepeat;
+
+import com.github.junitrunner.JUnitBasePlugin;
+import com.github.junitrunner.JUnitRunner;
+import com.github.junitrunner.JUnitSuite;
+import com.github.junitrunner.JUnitTest;
+import com.github.junitrunner.javamethod.JUnitJavaMethodTest;
 
 public class SpringPlugin extends JUnitBasePlugin {
 

@@ -1,10 +1,11 @@
-package org.junitrunner.unitils;
+package com.github.junitrunner.unitils;
 
 import java.util.List;
 
 import org.junit.runners.model.InitializationError;
-import org.junitrunner.JUnitPlugin;
-import org.junitrunner.JUnitRunner;
+
+import com.github.junitrunner.JUnitPlugin;
+import com.github.junitrunner.JUnitRunner;
 
 public class UnitilsRunner extends JUnitRunner {
 

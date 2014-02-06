@@ -1,4 +1,4 @@
-package org.junitrunner.spring;
+package com.github.junitrunner.spring;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;

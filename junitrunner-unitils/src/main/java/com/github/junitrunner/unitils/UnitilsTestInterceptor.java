@@ -1,10 +1,11 @@
-package org.junitrunner.unitils;
+package com.github.junitrunner.unitils;
 
 import org.junit.runners.model.Statement;
-import org.junitrunner.javamethod.AroundStatement;
-import org.junitrunner.javamethod.JUnitJavaMethodTest;
 import org.unitils.core.TestListener;
 import org.unitils.core.Unitils;
+
+import com.github.junitrunner.javamethod.AroundStatement;
+import com.github.junitrunner.javamethod.JUnitJavaMethodTest;
 
 public class UnitilsTestInterceptor extends AroundStatement {
 

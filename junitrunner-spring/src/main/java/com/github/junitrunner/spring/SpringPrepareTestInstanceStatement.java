@@ -1,4 +1,4 @@
-package org.junitrunner.spring;
+package com.github.junitrunner.spring;
 
 import org.junit.runners.model.Statement;
 import org.springframework.test.context.TestContextManager;

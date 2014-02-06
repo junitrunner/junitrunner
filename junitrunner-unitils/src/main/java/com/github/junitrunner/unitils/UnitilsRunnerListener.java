@@ -1,12 +1,13 @@
-package org.junitrunner.unitils;
+package com.github.junitrunner.unitils;
 
 import java.lang.reflect.Method;
 
-import org.junitrunner.JUnitTask;
-import org.junitrunner.javamethod.JUnitJavaMethodTest;
-import org.junitrunner.listener.BaseRunnerListener;
 import org.unitils.core.TestListener;
 import org.unitils.core.Unitils;
+
+import com.github.junitrunner.JUnitTask;
+import com.github.junitrunner.javamethod.JUnitJavaMethodTest;
+import com.github.junitrunner.listener.BaseRunnerListener;
 
 public class UnitilsRunnerListener extends BaseRunnerListener {
 

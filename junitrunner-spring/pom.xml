@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.junitrunner</groupId>
+	<groupId>com.github.junitrunner</groupId>
 	<artifactId>junitrunner-spring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>JUnit Runner</name>
@@ -24,26 +24,28 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>org.junitrunner</groupId>
+			<groupId>com.github.junitrunner</groupId>
 			<artifactId>junitrunner</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<version>3.2.3.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
+			<artifactId>spring-test</artifactId>
 			<version>3.2.3.RELEASE</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
+			<artifactId>spring-jdbc</artifactId>
 			<version>3.2.3.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.2.3.RELEASE</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
