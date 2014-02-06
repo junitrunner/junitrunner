@@ -1,0 +1,1 @@
+java -cp C:\dev\artifact-repository\org\hsqldb\hsqldb\2.3.1\hsqldb-2.3.1.jar org.hsqldb.util.DatabaseManagerSwing
