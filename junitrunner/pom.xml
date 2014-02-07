@@ -25,7 +25,7 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:git@github.com:junitrunner/junitrunner.git</connection>
+		<connection>scm:git:https://github.com/junitrunner/junitrunner.git</connection>
 		<developerConnection>scm:git:git@github.com:junitrunner/junitrunner.git</developerConnection>
 		<url>https://github.com/junitrunner/junitrunner/tree/master/junitrunner</url>
 		<tag>junitrunner-0.0.1</tag>
