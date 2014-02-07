@@ -10,7 +10,7 @@
 
 	<groupId>com.github.junitrunner</groupId>
 	<artifactId>junitrunner</artifactId>
-	<version>0.0.5-SNAPSHOT</version>
+	<version>0.0.5</version>
 	<packaging>jar</packaging>
 	<name>JUnit Runner</name>
 	<description>The extension friendly JUnit Runner with support for plugins</description>
