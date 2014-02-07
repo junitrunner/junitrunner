@@ -8,7 +8,7 @@
 	<packaging>jar</packaging>
 	<name>JUnit Runner</name>
 	<description>The extension friendly JUnit Runner with support for plugins</description>
-	<url>https://github.com/vasiliygagin/junitrunner</url>
+	<url>https://github.com/junitrunner/junitrunner</url>
 
 	<licenses>
 		<license>
@@ -19,9 +19,9 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:git://github.com/vasiliygagin/junitrunner.git</connection>
-		<developerConnection>scm:git:git@github.com:vasiliygagin/junitrunner.git</developerConnection>
-		<url>https://github.com/vasiliygagin/junitrunner/tree/master/junitrunner</url>
+		<connection>scm:git:git://github.com/junitrunner/junitrunner.git</connection>
+		<developerConnection>scm:git:git@github.com:junitrunner/junitrunner.git</developerConnection>
+		<url>https://github.com/junitrunner/junitrunner/tree/master/junitrunner</url>
 	</scm>
 
 	<developers>
