@@ -10,7 +10,7 @@
 
 	<groupId>com.github.junitrunner</groupId>
 	<artifactId>junitrunner</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>JUnit Runner</name>
 	<description>The extension friendly JUnit Runner with support for plugins</description>
@@ -25,8 +25,8 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:https://github.com/junitrunner/junitrunner.git</connection>
-		<developerConnection>scm:git:git@github.com:junitrunner/junitrunner.git</developerConnection>
+		<connection>scm:git:git@github.com:junitrunner/junitrunner.git</connection>
+		<developerConnection>scm:git:https://github.com/junitrunner/junitrunner.git</developerConnection>
 		<url>https://github.com/junitrunner/junitrunner/tree/master/junitrunner</url>
 		<tag>junitrunner-0.0.1</tag>
 	</scm>
