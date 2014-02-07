@@ -2,9 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
 	<groupId>com.github.junitrunner</groupId>
 	<artifactId>junitrunner</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 	<name>JUnit Runner</name>
 	<description>The extension friendly JUnit Runner with support for plugins</description>
@@ -19,10 +25,11 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:git://github.com/junitrunner/junitrunner.git</connection>
+		<connection>scm:git:git@github.com:junitrunner/junitrunner.git</connection>
 		<developerConnection>scm:git:git@github.com:junitrunner/junitrunner.git</developerConnection>
 		<url>https://github.com/junitrunner/junitrunner/tree/master/junitrunner</url>
-	</scm>
+	  <tag>junitrunner-0.0.1</tag>
+  </scm>
 
 	<developers>
 		<developer>
@@ -70,6 +77,22 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+<!-- 					<autoVersionSubmodules>true</autoVersionSubmodules> -->
+<!-- 					<tagBase>http://subversion.gfs.com/svn/customer/tags/customerMaintenanceSystem</tagBase> -->
+<!-- 					<branchBase>http://subversion.gfs.com/svn/customer/branches/customerMaintenanceSystem</branchBase> -->
+<!-- 					<updateBranchVersions>true</updateBranchVersions> -->
+<!-- 					<updateWorkingCopyVersions>true</updateWorkingCopyVersions> -->
+<!-- 					<tagNameFormat>@{project.version}</tagNameFormat> -->
+<!-- 					<suppressCommitBeforeTag>true</suppressCommitBeforeTag> -->
+<!-- 					<remoteTagging>false</remoteTagging> -->
+				</configuration>
 			</plugin>
 
 		</plugins>
