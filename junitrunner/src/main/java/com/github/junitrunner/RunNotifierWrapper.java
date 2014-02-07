@@ -21,24 +21,25 @@ public class RunNotifierWrapper extends BaseRunnerListener {
     }
 
     @Override
-    public void testStarted(JUnitTask test) {
-        runNotifier.fireTestStarted(test.describe());
-    }
-
-    @Override
-    public void testFinished(JUnitTask test) {
-        runNotifier.fireTestFinished(test.describe());
-    }
-
-    @Override
-    public void testFailed(JUnitTask test, Throwable e) {
-        Description description = test.describe();
-        Failure failure = new Failure(description, e);
-        if (e instanceof AssumptionViolatedException) {
-            runNotifier.fireTestAssumptionFailed(failure);
-        } else {
-            runNotifier.fireTestFailure(failure);
+    public void taskStarted(JUnitTask task) {
+        if (task instanceof JUnitTest) {
+            runNotifier.fireTestStarted(task.describe());
         }
-        runNotifier.fireTestFinished(description);
+    }
+
+    @Override
+    public void taskFinished(JUnitTask task, Throwable failure) {
+        if (task instanceof JUnitTest) {
+            if (failure != null) {
+                Description description = task.describe();
+                if (failure instanceof AssumptionViolatedException) {
+                    runNotifier.fireTestAssumptionFailed(new Failure(description, failure));
+                } else {
+                    runNotifier.fireTestFailure(new Failure(description, failure));
+                }
+            }
+
+            runNotifier.fireTestFinished(task.describe());
+        }
     }
 }

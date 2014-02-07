@@ -15,27 +15,15 @@ public class BaseRunnerListener implements RunnerListener {
     }
 
     @Override
-    public void testSuiteStarted(JUnitTask test) {
+    public void taskStarted(JUnitTask task) {
     }
 
     @Override
-    public void testSuiteFinished(JUnitTask test) {
+    public void taskFinished(JUnitTask task, Throwable failure) {
     }
 
     @Override
     public void testIgnored(JUnitTask test) {
-    }
-
-    @Override
-    public void testStarted(JUnitTask test) {
-    }
-
-    @Override
-    public void testFailed(JUnitTask test, Throwable e) {
-    }
-
-    @Override
-    public void testFinished(JUnitTask test) {
     }
 
     @Override

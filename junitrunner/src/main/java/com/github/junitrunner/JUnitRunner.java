@@ -47,6 +47,7 @@ public class JUnitRunner extends Runner implements Filterable, Sortable {
 
         computeClassStatement(errors);
         validateTestRules(errors);
+        // TODO: would be nice to discover tests before computeClassStatement
         discoverTests(errors);
         configureTestSuite(errors);
 
@@ -113,7 +114,10 @@ public class JUnitRunner extends Runner implements Filterable, Sortable {
 
     private void computeClassStatement(List<Throwable> errors) {
 
-        Description description = getDescription();
+        /*
+         * children are not registered yet, calling getDescription() will cache incomplete description
+         */
+        Description description = suite.describeSelf();
 
         Statement statement = suite.constructInvokeStatement(this);
 

@@ -18,7 +18,7 @@ public class JUnitSuite extends JUnitTask {
         this.testClass = testClass;
     }
 
-    void addTask(JUnitTask task) {
+    protected void addTask(JUnitTask task) {
         children.add(task);
     }
 
@@ -27,9 +27,9 @@ public class JUnitSuite extends JUnitTask {
     }
 
     @Override
-    public Description describe() {
+    public Description createDescription() {
 
-        Description description = Description.createSuiteDescription(testClass.getName(), testClass.getAnnotations());
+        Description description = describeSelf();
         for (JUnitTask test : children) {
             if (test.isFilteredOut()) {
                 continue;
@@ -37,6 +37,10 @@ public class JUnitSuite extends JUnitTask {
             description.addChild(test.describe());
         }
         return description;
+    }
+
+    protected Description describeSelf() {
+        return Description.createSuiteDescription(testClass.getName(), testClass.getAnnotations());
     }
 
     protected void invoke(JUnitRunner jUnitRunner) throws Throwable {
@@ -52,13 +56,14 @@ public class JUnitSuite extends JUnitTask {
             } else {
                 Statement statement = task.constructInvokeStatement(jUnitRunner);
                 jUnitRunner.listenerContainer.taskStarted(task);
+                Throwable failure = null;
                 try {
                     statement.evaluate();
-                    jUnitRunner.listenerContainer.taskFinished(task);
                 } catch (Throwable exc) {
-                    jUnitRunner.listenerContainer.taskFailed(task, exc);
+                    failure = exc;
                     hasFailures = true;
                 }
+                jUnitRunner.listenerContainer.taskFinished(task, failure);
             }
         }
 

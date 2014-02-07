@@ -10,6 +10,7 @@ public abstract class JUnitTask {
 
     private boolean ignored;
     private boolean filteredOut;
+    protected Description description;
 
     protected JUnitTask() {
     }
@@ -30,7 +31,14 @@ public abstract class JUnitTask {
         filteredOut = true;
     }
 
-    public abstract Description describe();
+    public final Description describe() {
+        if (description == null) {
+            description = createDescription();
+        }
+        return description;
+    }
+
+    public abstract Description createDescription();
 
     protected abstract Statement constructInvokeStatement(JUnitRunner jUnitRunner);
 

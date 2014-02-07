@@ -10,19 +10,13 @@ public interface RunnerListener {
 
     void testClassFinished(Description description);
 
-    void testSuiteStarted(JUnitTask test);
+    void taskStarted(JUnitTask task);
 
-    void testSuiteFinished(JUnitTask test);
+    void taskFinished(JUnitTask task, Throwable failure);
 
     void testCoreStarted(JUnitTask test, Object testObject);
 
     void testCoreFinished(JUnitTask test, Object testObject, Throwable error);
-
-    void testStarted(JUnitTask test);
-
-    void testFailed(JUnitTask test, Throwable e);
-
-    void testFinished(JUnitTask test);
 
     void testIgnored(JUnitTask test);
 

@@ -11,7 +11,6 @@ import com.github.junitrunner.JUnitTest;
 public class JUnitJavaMethodTest extends JUnitTest {
 
     private final Method method;
-    private Description description;
 
     public JUnitJavaMethodTest(Class<?> testClass, Method method) {
         this.method = method;
@@ -20,8 +19,8 @@ public class JUnitJavaMethodTest extends JUnitTest {
     }
 
     @Override
-    public Description describe() {
-        return description;
+    public Description createDescription() {
+        throw new UnsupportedOperationException();
     }
 
     public Method getMethod() {
