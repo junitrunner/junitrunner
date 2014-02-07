@@ -1,3 +1,4 @@
 db.tmp
 db.lck
 db.log
+db.properties
