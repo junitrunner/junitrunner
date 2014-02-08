@@ -2,11 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
 	<groupId>com.github.junitrunner</groupId>
 	<artifactId>junitrunner-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>JUnitRunner Parent project</name>
+	<description>The extension friendly JUnit Runner with support for plugins ann implementations of Plugins for some popular frameworks</description>
+	<url>https://github.com/junitrunner/junitrunner</url>
 
 	<modules>
 		<module>junitrunner</module>
@@ -14,5 +22,44 @@
 		<module>junitrunner-unitils</module>
 		<module>junitrunner-mockito</module>
 	</modules>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:git@github.com:junitrunner/junitrunner.git</connection>
+		<developerConnection>scm:git:https://github.com/junitrunner/junitrunner.git</developerConnection>
+		<url>https://github.com/junitrunner/junitrunner</url>
+		<tag>junitrunner-0.0.1</tag>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>vasiliygagin</id>
+			<name>Vasiliy Gagin</name>
+		</developer>
+	</developers>
+
+	<build>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
 
 </project>
