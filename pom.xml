@@ -35,7 +35,6 @@
 		<connection>scm:git:git@github.com:junitrunner/junitrunner.git</connection>
 		<developerConnection>scm:git:https://github.com/junitrunner/junitrunner.git</developerConnection>
 		<url>https://github.com/junitrunner/junitrunner</url>
-		<tag>junitrunner-0.0.1</tag>
 	</scm>
 
 	<developers>
