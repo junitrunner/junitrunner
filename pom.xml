@@ -10,7 +10,7 @@
 
 	<groupId>com.github.junitrunner</groupId>
 	<artifactId>junitrunner-parent</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>JUnitRunner Parent project</name>
 	<description>The extension friendly JUnit Runner with support for plugins ann implementations of Plugins for some popular frameworks</description>
@@ -49,6 +49,7 @@
 
 		<pluginManagement>
 			<plugins>
+
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>2.3.2</version>
@@ -57,9 +58,17 @@
 						<target>1.6</target>
 					</configuration>
 				</plugin>
+
+				<plugin>
+					<artifactId>maven-release-plugin</artifactId>
+					<configuration>
+						<autoVersionSubmodules>true</autoVersionSubmodules>
+						<tagNameFormat>junitrunner-@{project.version}</tagNameFormat>
+					</configuration>
+				</plugin>
+
 			</plugins>
 		</pluginManagement>
-
 	</build>
 
 </project>
