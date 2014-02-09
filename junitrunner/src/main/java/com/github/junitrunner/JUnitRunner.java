@@ -114,9 +114,7 @@ public class JUnitRunner extends Runner implements Filterable, Sortable {
 
     private void computeClassStatement(List<Throwable> errors) {
 
-        /*
-         * children are not registered yet, calling getDescription() will cache incomplete description
-         */
+        /* children are not registered yet, calling getDescription() will cache incomplete description */
         Description description = suite.describeSelf();
 
         Statement statement = suite.constructInvokeStatement(this);
@@ -252,5 +250,9 @@ public class JUnitRunner extends Runner implements Filterable, Sortable {
                 suite.invoke(JUnitRunner.this);
             }
         };
+    }
+
+    public StepRunnerListenerDelegate getStepRunnerListenerDelegate() {
+        return new StepRunnerListenerDelegate(listenerContainer);
     }
 }

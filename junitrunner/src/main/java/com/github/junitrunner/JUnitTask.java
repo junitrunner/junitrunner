@@ -6,21 +6,11 @@ import org.junit.runner.Description;
 import org.junit.runner.manipulation.Filter;
 import org.junit.runners.model.Statement;
 
-public abstract class JUnitTask {
+public abstract class JUnitTask extends Task {
 
-    private boolean ignored;
     private boolean filteredOut;
-    protected Description description;
 
     protected JUnitTask() {
-    }
-
-    public boolean isIgnored() {
-        return ignored;
-    }
-
-    public void ignore() {
-        ignored = true;
     }
 
     public boolean isFilteredOut() {
@@ -30,15 +20,6 @@ public abstract class JUnitTask {
     protected void filterOut() {
         filteredOut = true;
     }
-
-    public final Description describe() {
-        if (description == null) {
-            description = createDescription();
-        }
-        return description;
-    }
-
-    public abstract Description createDescription();
 
     protected abstract Statement constructInvokeStatement(JUnitRunner jUnitRunner);
 

@@ -21,6 +21,7 @@
 		<module>junitrunner-spring</module>
 		<module>junitrunner-unitils</module>
 		<module>junitrunner-mockito</module>
+		<module>junitrunner-cucumber</module>
 	</modules>
 
 	<licenses>

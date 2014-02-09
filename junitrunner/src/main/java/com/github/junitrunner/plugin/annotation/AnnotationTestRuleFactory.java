@@ -30,17 +30,15 @@ public class AnnotationTestRuleFactory implements TestRuleFactory {
     public Statement addTestParts(JUnitTest test, Object testObject, Statement statement) {
 
         Test annotation = test.getAnnotation(Test.class);
-        statement = withTimeout(statement, annotation);
-        statement = withExpectedException(statement, annotation);
+        if (annotation != null) {
+            statement = withTimeout(statement, annotation);
+            statement = withExpectedException(statement, annotation);
+        }
         return statement;
     }
 
     Statement withTimeout(Statement statement, Test annotation) {
-        long timeout = 0;
-        if (annotation != null) {
-            timeout = annotation.timeout();
-        }
-
+        long timeout = annotation.timeout();
         if (timeout > 0) {
             statement = new FailOnTimeout(statement, timeout);
         }
@@ -83,11 +81,13 @@ public class AnnotationTestRuleFactory implements TestRuleFactory {
         List<TestRule> testRules = testHelper.getAnnotatedMethodValues(testObject, Rule.class, TestRule.class);
         testRules.addAll(testHelper.getAnnotatedFieldValues(testObject, Rule.class, TestRule.class));
 
-        FrameworkMethod frameworkMethod = new FrameworkMethod(((JUnitJavaMethodTest) test).getMethod());
-        List<MethodRule> methodRules = testHelper.getAnnotatedFieldValues(testObject, Rule.class, org.junit.rules.MethodRule.class);
-        methodRules.removeAll(testRules);
-        for (final MethodRule each : methodRules) {
-            statement = each.apply(statement, frameworkMethod, testObject);
+        if (test instanceof JUnitJavaMethodTest) {
+            FrameworkMethod frameworkMethod = new FrameworkMethod(((JUnitJavaMethodTest) test).getMethod());
+            List<MethodRule> methodRules = testHelper.getAnnotatedFieldValues(testObject, Rule.class, org.junit.rules.MethodRule.class);
+            methodRules.removeAll(testRules);
+            for (final MethodRule each : methodRules) {
+                statement = each.apply(statement, frameworkMethod, testObject);
+            }
         }
 
         for (TestRule rule : testRules) {

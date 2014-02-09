@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.junit.runner.Description;
 
+import com.github.junitrunner.Task;
 import com.github.junitrunner.JUnitTask;
 
 public class RunnerListenerContainer {// implements RunnerListener {
@@ -27,24 +28,6 @@ public class RunnerListenerContainer {// implements RunnerListener {
         }
     }
 
-    public void taskIgnored(JUnitTask test) {
-        for (RunnerListener listener : listeners) {
-            listener.testIgnored(test);
-        }
-    }
-
-    public void taskStarted(JUnitTask task) {
-        for (RunnerListener listener : listeners) {
-            listener.taskStarted(task);
-        }
-    }
-
-    public void taskFinished(JUnitTask task, Throwable failure) {
-        for (RunnerListener listener : listeners) {
-            listener.taskFinished(task, failure);
-        }
-    }
-
     public void testCoreStarted(JUnitTask test, Object testObject) {
         for (RunnerListener listener : listeners) {
             listener.testCoreStarted(test, testObject);
@@ -54,6 +37,24 @@ public class RunnerListenerContainer {// implements RunnerListener {
     public void testCoreFinished(JUnitTask test, Object testObject, Throwable error) {
         for (RunnerListener listener : listeners) {
             listener.testCoreFinished(test, testObject, error);
+        }
+    }
+
+    public void taskIgnored(Task task) {
+        for (RunnerListener listener : listeners) {
+            listener.taskIgnored(task);
+        }
+    }
+
+    public void taskStarted(Task task) {
+        for (RunnerListener listener : listeners) {
+            listener.taskStarted(task);
+        }
+    }
+
+    public void taskFinished(Task task, Throwable failure) {
+        for (RunnerListener listener : listeners) {
+            listener.taskFinished(task, failure);
         }
     }
 }

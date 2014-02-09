@@ -3,6 +3,7 @@ package com.github.junitrunner.listener;
 import org.junit.runner.Description;
 
 import com.github.junitrunner.JUnitTask;
+import com.github.junitrunner.Task;
 
 public interface RunnerListener {
 
@@ -10,14 +11,13 @@ public interface RunnerListener {
 
     void testClassFinished(Description description);
 
-    void taskStarted(JUnitTask task);
-
-    void taskFinished(JUnitTask task, Throwable failure);
-
     void testCoreStarted(JUnitTask test, Object testObject);
 
     void testCoreFinished(JUnitTask test, Object testObject, Throwable error);
 
-    void testIgnored(JUnitTask test);
+    void taskStarted(Task task);
 
+    void taskFinished(Task task, Throwable failure);
+
+    void taskIgnored(Task task);
 }
