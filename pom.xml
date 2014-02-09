@@ -10,7 +10,7 @@
 
 	<groupId>com.github.junitrunner</groupId>
 	<artifactId>junitrunner-parent</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<packaging>pom</packaging>
 	<name>JUnitRunner Parent project</name>
 	<description>The extension friendly JUnit Runner with support for plugins ann implementations of Plugins for some popular frameworks</description>
